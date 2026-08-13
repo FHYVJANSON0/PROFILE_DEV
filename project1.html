@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="project1.css">
+</head>
+<body>
+    <button class="back-fixed" onclick="history.back()" aria-label="Go back">←</button>
+    <section class="project-section">
+        <header class="project-header">
+            <p>MY PROJECT</p>
+            <h1>WEB DESIGN</h1>
+            <div class="header-line"></div>
+        </header>
+
+        <div class="project-gallery">
+            <article class="project-card">
+                <img src="HOME...png" alt="Project 1" onclick="openImage(this)">
+                <div class="project-info">
+                    <span>01</span>
+                    <h2>DASHBOARD</h2>
+                    <p>HTML • CSS • PHP</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="USERS.png" alt="Project 2" onclick="openImage(this)">
+                <div class="project-info">
+                    <span>02</span>
+                    <h2>USERS</h2>
+                    <p>HTML • CSS • PHP</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="INFO..png" alt="Project 3" onclick="openImage(this)">
+                <div class="project-info">
+                    <span>03</span>
+                    <h2>INFORMATION</h2>
+                    <p>HTML • CSS • PHP</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="ARCH.png" alt="Project 4" onclick="openImage(this)">
+                <div class="project-info">
+                    <span>04</span>
+                    <h2>ARCHIVE</h2>
+                    <p>HTML • CSS • PHP</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="EME.png" alt="Project 5" onclick="openImage(this)">
+                <div class="project-info">
+                    <span>05</span>
+                    <h2>EMERGENCY</h2>
+                    <p>HTML • CSS • PHP</p>
+                </div>
+            </article>
+        </div>
+
+        <footer class="project-footer">
+            <h2>ADMIN PALLETE</h2>
+            <p>DESIGN • DEVELOPMENT • TECHNOLOGY</p>
+
+            <section>
+                <button class="back-button" onclick="window.location.href='home.html'">BACK</button>
+            </section>
+        </footer>
+    </section>
+
+    <div id="imageModal" class="image-modal">
+        <span class="close-image" onclick="closeImage()">&times;</span>
+        <img id="fullImage" class="full-image" src="" alt="Full Project Image">
+    </div>
+
+    <script>
+        function openImage(image) {
+            const modal = document.getElementById("imageModal");
+            const fullImage = document.getElementById("fullImage");
+            fullImage.src = image.src;
+            fullImage.alt = image.alt;
+            modal.style.display = "flex";
+        }
+
+        function closeImage() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        document.getElementById("imageModal").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeImage();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeImage();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="project2.css">
+</head>
+<body>
+    <button class="back-fixed" onclick="history.back()" aria-label="Go back">←</button>
+    <section class="project-section">
+        <header class="project-header">
+            <p>MY PROJECT</p>
+            <h1>APPLICATION</h1>
+            <div class="header-line"></div>
+        </header>
+
+        <div class="project-gallery">
+
+    <!-- PROJECT 01 -->
+    <article class="project-card">
+        <img src="APP LOGO.png" alt="Project 1" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>01</span>
+            <h2>INTRODUCTION</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 02 -->
+    <article class="project-card">
+        <img src="LOGIN.png" alt="Project 2" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>02</span>
+            <h2>LOGIN</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 03 -->
+    <article class="project-card">
+        <img src="REGISTER.png" alt="Project 3" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>03</span>
+            <h2>REGISTER</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 04 -->
+    <article class="project-card">
+        <img src="ID SCAN.png" alt="Project 4" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>04</span>
+            <h2>ID SCANNER</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 05 -->
+    <article class="project-card">
+        <img src="VERIFICATION.png" alt="Project 5" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>05</span>
+            <h2>VERIFICATION</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 06 -->
+    <article class="project-card">
+        <img src="HOMEPAGE.png" alt="Project 6" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>06</span>
+            <h2>HOMEPAGE</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 07 -->
+    <article class="project-card">
+        <img src="RECEIVE.png" alt="Project 7" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>07</span>
+            <h2>RECEIVE</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+
+    <!-- PROJECT 08 -->
+    <article class="project-card">
+        <img src="PROFILE AM.png" alt="Project 8" onclick="openImage(this)">
+
+        <div class="project-info">
+            <span>08</span>
+            <h2>PROFILE</h2>
+            <p>HTML • CSS • PHP</p>
+        </div>
+    </article>
+
+</div>
+
+
+<footer class="project-footer">
+
+    <h2>INSIDE INTERFACE APP</h2>
+
+    <p>
+        DESIGN • DEVELOPMENT • TECHNOLOGY
+    </p>
+
+    <section>
+
+        <button
+            class="back-button"
+            onclick="window.location.href='home.html'">
+            BACK
+        </button>
+
+    </section>
+
+</footer>
+
+<!-- IMAGE POPUP -->
+
+<div id="imageModal" class="image-modal">
+
+    <span
+        class="close-image"
+        onclick="closeImage()">
+        &times;
+    </span>
+
+    <img
+        id="fullImage"
+        class="full-image"
+        src=""
+        alt="Full Project Image">
+
+</div>
+
+
+<script>
+
+function openImage(image) {
+
+    const modal =
+        document.getElementById("imageModal");
+
+    const fullImage =
+        document.getElementById("fullImage");
+
+    fullImage.src = image.src;
+
+    fullImage.alt = image.alt;
+
+    modal.style.display = "flex";
+}
+
+
+function closeImage() {
+
+    const modal =
+        document.getElementById("imageModal");
+
+    modal.style.display = "none";
+}
+
+
+/* CLICK OUTSIDE IMAGE */
+
+document
+    .getElementById("imageModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeImage();
+        }
+
+    });
+
+
+/* ESC KEY */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeImage();
+    }
+
+});
+
+</script>
